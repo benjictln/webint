@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Social Network</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>Social Network</h1>
+        <div>
+            <h3>Search</h3>
+            <input class="search" type="text">
+            <input class="button" type="button">
+        </div>
+    </header>
+
+    <section>
+        <div>
+            <h2>Profile</h2>
+            <h3>Friends</h3>
+
+        </div>
+        <ul>
+            <li>News</li>
+            <li>Groups</li>
+            <li>Events</li>
+        </ul>
+    </section>
+    <section>
+        <header>
+            <div>
+                <input class="image_button" type="button">
+                <input class="video button" type="button">
+                <input class="event" type="button">
+            </div>
+            <input class="post" type="text">
+        </header>
+        <article>
+            <form>
+                First Name
+                <input type="text" name="firstname">
+                Last Name
+                <input type="text" name="lastname">
+                Email
+                <input type="email" name="email">
+                Phone Number
+                <input type="tel" name="phonenumber">
+            </form>
+        </article>
+
+        <article id="map_article">
+            <div id="map"></div>
+            <script src="Geolocation.js">
+            </script>
+
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNY2lzFlzBVYaKsoVs2oJe_4OgdBtdLs&callback=initMap">
+            </script>
+
+            <form>
+                Street
+                <input type="text" name="street">
+                City
+                <input type="text" name="city">
+                Zip code
+                <input type="text" name="zip_code">
+                Country
+                <input type="text" name="country">
+                <input onclick="setLocation()" type="submit" value="Submit">
+            </form>
+        </article>
+    </section>
+</body>
+</html>
