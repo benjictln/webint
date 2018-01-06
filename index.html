@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Social Network</title>
 
@@ -19,16 +18,16 @@
                 <div class="col-sm-4">
                     <h1>Social Network</h1>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-8" align="center">
                     <h3>Search</h3>
-                    <input class="search" type="text">
-                    <input class="button" type="button">
+                        <input class="search" type="text">
+                        <input class="button" type="button">
                 </div>
             </div>
         </header>
 
         <div class="row">
-            <section class="col-sm-3">
+            <section class="col-md-4" id="column_left">
                 <div>
                     <h2>Profile</h2>
                     <h3>Friends</h3>
@@ -40,29 +39,37 @@
                     <li>Events</li>
                 </ul>
             </section>
-            <section class="col-sm-7">
+            <section class="col-md-8" id="column_right">
                 <header>
                     <div>
-                        <input class="image_button" type="button">
-                        <input class="video button" type="button">
-                        <input class="event" type="button">
+                        <input class="image_button" type="button" value="image">
+                        <input class="video button" type="button" value="video">
+                        <input class="event" type="button" value="event">
                     </div>
                     <input class="post" type="text">
                 </header>
-                <article>
+                <article class="form_article">
                     <form>
-                        First Name
-                        <input type="text" name="firstname">
-                        Last Name
-                        <input type="text" name="lastname">
-                        Email
-                        <input type="email" name="email">
-                        Phone Number
-                        <input type="tel" name="phonenumber">
+                        <div class="row">
+                            First Name
+                            <input type="text" name="firstname">
+                        </div>
+                        <div class="row">
+                            Last Name
+                            <input type="text" name="lastname">
+                        </div>
+                        <div class="row">
+                            Email
+                            <input type="email" name="email">
+                        </div>
+                        <div class="row">
+                            Phone Number
+                            <input type="tel" name="phonenumber">
+                        </div>
                     </form>
                 </article>
 
-                <article id="map_article">
+                <article class="map_article">
                     <div id="map"></div>
                     <script src="Geolocation.js">
                     </script>
@@ -71,18 +78,53 @@
                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNY2lzFlzBVYaKsoVs2oJe_4OgdBtdLs&callback=initMap">
                     </script>
 
-                    <form>
+                    <form action="javascript:void(0)" onsubmit="setLocation()">
+                        <div class="row">
                         Street
-                        <input type="text" name="street">
-                        City
-                        <input type="text" name="city">
-                        Zip code
-                        <input type="text" name="zip_code">
-                        Country
-                        <input type="text" name="country">
-                        <input onclick="setLocation()" type="submit" value="Submit">
+                        <input type="text" name="street" id="map_street">
+                        </div>
+                        <div class="row">
+                            City
+                            <input type="text" name="city" id="map_city">
+                        </div>
+                        <div class="row">
+                            Zip code
+                            <input type="text" name="zip_code" id="map_zip_code">
+                        </div>
+                        <div class="row">
+                            Country
+                            <input type="text" name="country" id="map_country">
+                        </div>
+                        <input type="submit" value="Submit">
                     </form>
                 </article>
+                <article>
+                    Article test number 1
+                </article>
+                <article>
+                    Article test number 2
+                </article>
+                <!--  <article class="video_article">
+                    <video width="320" height="240" id="video1">
+                        <source id="video_src_avi" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.avi" type="video/avi" >
+                        <source id="video_src_mp4" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.mp4" type="video/mp4">
+                        <source id="video_src_ogv"src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.ogv" type="video/ogv">
+                        Your browser does not support the video tag.
+                    </video>
+                    <form action="javascript:void(0)" class="form_inline" name="videoForm" onsubmit="formVideoSubmit()">
+                        <div class="form-group">
+                            <label>URL:</label>
+                            <input type="url" class="form-control" name="url_video">
+                        </div>
+                        <div class="form_group">
+                            <label>offset:</label>
+                            <input type="number" class="form_control" name="offset" value="0" placeholder="offset is in seconds">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                                            <script src="Video.js"></script>
+
+                    </form>
+                </article> -->
             </section>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
