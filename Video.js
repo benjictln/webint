@@ -21,3 +21,27 @@ function formVideoSubmit() {
     document.getElementById('video1').play();*/
 
 }
+
+function previewVideo() {
+
+    var my_url = document.forms["videoForm"]["url_video"].value;
+    if (my_url == ""){
+        alert("Please enter a valid ulr");
+        return;
+    }
+    var my_video_preview = document.getElementById('video_preview');
+    my_video_preview.src = my_url + '&end=5';
+    my_video_preview.autoplay;
+    my_video_preview.play();
+}
+var deg = 0;
+function rotateVideo() {
+
+    my_video = document.getElementById('video1');
+    deg += 90;
+    my_video.style.webkitTransform = 'rotate('+deg+'deg)';
+    my_video.style.mozTransform    = 'rotate('+deg+'deg)';
+    my_video.style.msTransform     = 'rotate('+deg+'deg)';
+    my_video.style.oTransform      = 'rotate('+deg+'deg)';
+    my_video.style.transform       = 'rotate('+deg+'deg)';
+}
