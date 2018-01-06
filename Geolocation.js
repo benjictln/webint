@@ -72,40 +72,33 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function setLocation(){
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 6
+    });
+    var infoWindow = new google.maps.InfoWindow({map: map});
     var geocoder = new google.maps.Geocoder();
-    var address = String(document.getElementsByName("street")[0].value) + " " + String(document.getElementsByName("city")[0].value) + " " + String(document.getElementsByName("zip_code")[0].value) + " " + String(document.getElementsByName("country")[0].value);
-    console.log(address);
-
+    var address = String(document.getElementsByName("street")[0].value) + ", " + String(document.getElementsByName("city")[0].value) + " " + String(document.getElementsByName("zip_code")[0].value) + ", " + String(document.getElementsByName("country")[0].value);
     geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == 'OK') {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+            map.setZoom(11);
+            infoWindow.setContent(address);
+            infoWindow.open(map, marker);
 
-        /*if (status == google.maps.GeocoderStatus.OK) {*/
 
-        var latitude = results[0].geometry.location.lat();
-        var longitude = results[0].geometry.location.lng();
-        console.log("changement de coordonnees");
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 6
-        });
-        var infoWindow = new google.maps.InfoWindow({map: map});
-
-        // Try HTML5 geolocation.
-        var pos = {
-            lat: latitude,
-            lng: longitude
-        };
-
-        try {
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            map.setCenter(pos);
-        }
-        catch(err) {
-            console.log(err.message);
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
         }
     });
 
 }
+
+
 
 
 
