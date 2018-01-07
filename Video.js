@@ -167,6 +167,7 @@ function next() {
     }
     if (playing == 1) document.getElementById('previous_jukebox').disabled = false;
     if (playing == 3) document.getElementById('next_jukebox').disabled = true;
+    document.getElementById('playing_number').innerHTML=String(playing+1);
 }
 
 function previous() {
@@ -183,4 +184,6 @@ function previous() {
     }
     if (playing == 0) document.getElementById('previous_jukebox').disabled = true;
     if (playing == 2) document.getElementById('next_jukebox').disabled = false;
+    document.getElementById('playing_number').innerHTML=String(playing+1);
 }
+

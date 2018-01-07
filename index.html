@@ -150,9 +150,12 @@
                         <source src="https://archive.org/download/video_rapid_201703/video_rapid_240x350.ogv" type="video/ogv">
                         Your browser does not support the video tag.
                     </video>
+                    <script>document.getElementById('video_jukebox').addEventListener('ended',next,false);</script>
                     <br>
+                    <div class="row"><h5>video playing :</h5> <h5 id="playing_number"> 1</h5><h5>/4</h5>
+                    </div>
                     <button id="previous_jukebox" onclick="previous()" disabled>Previous</button>
-                    <h5>video</h5>
+
                     <button id="next_jukebox" onclick="next()">Next</button>
 
                 </article>
