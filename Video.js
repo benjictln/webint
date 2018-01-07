@@ -4,11 +4,8 @@ var ctx = my_canvas.getContext('2d');
 var my_video = document.getElementById('video1');
 ctx.transform(1,0,0,-1,0,my_canvas.height);
 var hasVideoChanged = false;
+var hasChangedNumber = 300;
 
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function formVideoSubmit() {
     var my_url = document.forms["videoForm"]["url_video"].value;
@@ -25,6 +22,7 @@ function formVideoSubmit() {
     });
 
     hasVideoChanged = true;
+    hasChangedNumber = 0;
     /*var video_avi = document.getElementById('video_src_avi');
     var video_mp4 = document.getElementById('video_src_mp4');
     var video_ogv = document.getElementById('video_src_ogv');
@@ -68,14 +66,26 @@ function rotateVideo() {
     my_canvas.style.transform       = 'rotate('+deg+'deg)';
 }
 
-function changeControls() {
-    my_video.controls = !my_video.controls;
+function changeControls(number) {
+    switch (number) {
+        case 1:
+            my_video.controls = !my_video.controls;
+            break;
+        case 2:
+            document.getElementById('video_bubble').controls = !document.getElementById('video_bubble').controls;
+            break;
+        default:
+            break;
+    }
 }
 
 
 
 function mirrorVideo( new_mirror = true) {
-    if (new_mirror) isVideoMirrored = !isVideoMirrored;
+    if (new_mirror) {
+        isVideoMirrored = !isVideoMirrored;
+        if (!isVideoMirrored) ctx.clearRect(0,0,my_video.width, my_video.height);
+    }
     if (isVideoMirrored) loop();
     var width_ratio;
     var height_ratio;
@@ -110,17 +120,67 @@ function mirrorVideo( new_mirror = true) {
         console.log(my_canvas.clientHeight); */
     }
     calculateNewDimension();
-    async function loop() {
-        if (hasVideoChanged){
+    function loop() {
+        if (hasVideoChanged || hasChangedNumber < 300){
             ctx.clearRect(0, 0, my_canvas.width, my_canvas.height);
             hasVideoChanged = false;
             calculateNewDimension();
-            await sleep(1000);
-            mirrorVideo(false);
+            hasChangedNumber++;
+            ctx.drawImage(my_video, x, y,  width_ratio, height_ratio);
+            setTimeout(loop, 1000 / 30);
         }
-        if (isVideoMirrored){
+        else if (isVideoMirrored){
             ctx.drawImage(my_video, x, y,  width_ratio, height_ratio);
             setTimeout(loop, 1000 / 30);
         }
     }
+}
+function stopVideo(video) {
+    if (video.paused) video.play();
+    else video.pause();
+}
+
+var video_mp4 = new Array();
+var video_ogv = new Array();
+video_mp4[0]='https://archive.org/download/video_rapid_201703/video_rapid_240x350.mp4';
+video_ogv[0]='https://archive.org/download/video_rapid_201703/video_rapid_240x350.ogv';
+video_mp4[1]='https://archive.org/download/electricsheep-flock-247-7500-8/00247%3D07508%3D07323%3D07315.mp4';
+video_ogv[1]='https://archive.org/download/electricsheep-flock-247-7500-8/00247%3D07508%3D07323%3D07315.ogv';
+video_mp4[2]='https://ia800404.us.archive.org/7/items/Bets10YeniSezonVideo/Bets10%20Yeni%20Sezon%20Video.mp4';
+video_ogv[2]='https://ia800404.us.archive.org/7/items/Bets10YeniSezonVideo/Bets10%20Yeni%20Sezon%20Video.ogv';
+video_mp4[3]='https://archive.org/download/depeche_mode_june_final/depeche_mode_240x350.mp4';
+video_ogv[3]='https://archive.org/download/depeche_mode_june_final/depeche_mode_240x350.ogv';
+var playing = 0;
+
+
+function next() {
+    if (playing < 3) {
+        var videoJukebox = document.getElementById('video_jukebox');
+        playing++;
+        videoJukebox.src=video_mp4[playing];
+        videoJukebox.play().catch(function () {
+            videoJukebox.src=video_ogv[playing];
+            videoJukebox.play().catch(function () {
+                alert('Error, your browser could not play mp4 nor ogv videos. Please try again.')
+            })
+        });
+    }
+    if (playing == 1) document.getElementById('previous_jukebox').disabled = false;
+    if (playing == 3) document.getElementById('next_jukebox').disabled = true;
+}
+
+function previous() {
+    if (playing > 0) {
+        var videoJukebox = document.getElementById('video_jukebox');
+        playing--;
+        videoJukebox.src=video_mp4[playing];
+        videoJukebox.play().catch(function () {
+            videoJukebox.src=video_ogv[playing];
+            videoJukebox.play().catch(function () {
+                alert('Error, your browser could not load the video. Please try again.')
+            })
+        });
+    }
+    if (playing == 0) document.getElementById('previous_jukebox').disabled = true;
+    if (playing == 2) document.getElementById('next_jukebox').disabled = false;
 }
