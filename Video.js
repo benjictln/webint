@@ -5,6 +5,7 @@ var my_video = document.getElementById('video1');
 ctx.transform(1,0,0,-1,0,my_canvas.height);
 var hasVideoChanged = false;
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -19,7 +20,10 @@ function formVideoSubmit() {
 
     if (isNaN(offset)) offset = 0;
     my_video.src = my_url + '#t=' + String(offset);
-    my_video.play();
+    my_video.play().catch(function () {
+        alert('your link is not working, please try again');
+    });
+
     hasVideoChanged = true;
     /*var video_avi = document.getElementById('video_src_avi');
     var video_mp4 = document.getElementById('video_src_mp4');
