@@ -1,18 +1,166 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
-#map {
-    height: 100%;
-    width: 100%;
-}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
+    background-color: azure;
+    min-width: 320px;
+
 }
 
-#map_article {
-    height: 300px;
+#title {
+    height: 15%;
+    width: 100%;
+    padding-left: 5%;
+    padding-top: 0.2%;
+    padding-bottom: 1%;
+
+    background-color: azure;
+    color: darkslategrey;
+
+    text-align: left;
+    font-style: italic;
+    font-size: x-large;
+
+    margin: auto;
+
+}
+
+#logo {
+    width: 5%;
+    vertical-align: middle;
+}
+
+#searchbar {
+    overflow: hidden;
+}
+#LeftBar {
+    float: left;
+    display: block;
+    min-height: 402.5%;
+    width: 15%;
+    position: absolute;
+    padding: 2em;
+
+    background-color: darkslategrey;
+    color: azure;
+
+    text-align: left;
+
+    margin: auto;
+    word-wrap: break-word;
+}
+
+
+
+#RightBar {
+    position:absolute;
+    left: 80%;
+    top: 0.001%;
+    display:block;
+    height: 420%;
+    width: 20%;
+    margin:auto;
+    padding: 2em;
+
+    background-color: darkslategrey;
+    color: azure;
+
+    text-align: left;
+}
+#MidBar {
+    width: 70%;
+    height: 120%;
+    padding: 5em;
+    background-color: azure;
+    color: darkslategrey;
+    margin: auto;
+}
+
+/*content of the central column MidBar*/
+.box {
+    height: 100px;
+    width: 50%;
+    font-size: 1em;
+}
+
+#post {
+    text-align: center;
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+#map {
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+}
+
+article {
+    padding: 5%;
+    background-color: seagreen;
+    opacity: 0.8;
+    color: white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 5%;
+}
+
+fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+legend {
+    padding: 0px 3px;
+    font-weight: bold;
+}
+
+label {
+    width: 110px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 6px;
+}
+
+#form, textarea {
     width: 300px;
+}
+
+textarea {
+    height: 100px;
+}
+#button {
+
+}
+.article_bottom {
+    padding: 1%;
+    background-color: white;
+    width: 57.8%;
+    height: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid darkslategrey;
+    overflow: hidden;
+}
+
+.comment {
+    /*float: left;*/
+    float:right;
+    height: 80%;
+    width: 88%;
+    font-size: 1em;
+    /*margin-right: 8%;*/
+}
+.share {
+    width: 6%;
+    display: inline-block;
+    vertical-align: middle;
 }
