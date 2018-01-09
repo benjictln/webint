@@ -2,78 +2,176 @@
 
 <html lang="en">
 <head>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"> -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no">-->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Social Network</title>
+    <title>Share</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 </head>
 
 <body>
-    <header>
-        <h1>Social Network</h1>
-        <div>
-            <h3>Search</h3>
+    <header id="title">
+        <h1> Share <img id="logo" src="1f91d.png" alt="logo" /></h1>
+    </header>
+
+
+    <section id="LeftBar">
+        <div id="searchbar">
+            <h2>Search</h2>
             <input class="search" type="text">
             <input class="button" type="button">
         </div>
-    </header>
-
-    <section>
         <div>
             <h2>Profile</h2>
             <h3>Friends</h3>
 
         </div>
-        <ul>
-            <li>News</li>
-            <li>Groups</li>
-            <li>Events</li>
-        </ul>
+            <h4>News</h4>
+            <h4>Groups</h4>
+            <h4>Events</h4>
     </section>
-    <section>
-        <header>
+    <section id="MidBar">
+        <header id="post">
             <div>
+                Image
                 <input class="image_button" type="button">
+                Video
                 <input class="video button" type="button">
+                Event
                 <input class="event" type="button">
             </div>
-            <input class="post" type="text">
+            <input class="box" type="text">
         </header>
         <article>
-            <form>
-                First Name
-                <input type="text" name="firstname">
-                Last Name
-                <input type="text" name="lastname">
-                Email
-                <input type="email" name="email">
-                Phone Number
-                <input type="tel" name="phonenumber">
-            </form>
+            Article test number 1
         </article>
+        <section class="article_bottom">
+            7
+            <img class= "share" src="1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
+        <article>
+            Article test number 2
+        </article>
+        <section class="article_bottom">
+            12
+            <img class= "share" src="1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
+        <article>
+            <fieldset>
+                <legend>Please fill in this form !</legend>
+                <label for="firstname">First Name:</label>
+                <!--placeholder: indication grisée
+                //required: il faut renseigner le champs sinon la validation est bloquée
+                //autofocus: le curseur est positionné dans cette case au chargement de la page-->
+                <input class="form" id="firstname" placeholder="Raphaël"><br>
+                <label for="lastname">Last Name:</label>
+                <!-- type="tel": bascule le clavier sur un smartphone
+                // pattern: expression régulière à vérifier pour pouvoir valider-->
+                <input class="form" id="lastname" placeholder="Troncy"><br>
+                <label for="email">Email:</label>
+                <input class="form" id="email" placeholder="prenom.nom@eurecom.fr" required="" pattern="[a-zA-Z]*.[a-zA-Z]*@[a-zA-Z]*.[a-zA-Z]*" type="email"><br>
+                <label for="phonenumber">Phone Number:</label>
+                <!--// type="tel": bascule le clavier sur un smartphone
+                // pattern: expression régulière à vérifier pour pouvoir valider-->
+                <input class="form" id="phonenumber" placeholder="06xxxxxxxx" pattern="06[0-9]{8}" type="tel"><br>
+            </fieldset>
+
+        </article>
+        <section class="article_bottom">
+            9
+            <img class= "share" src="1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
 
         <article id="map_article">
-            <div id="map"></div>
-            <script src="Geolocation.js">
-            </script>
+            <div id="map">
+                <script src="Geolocation.js">
+                </script>
 
-            <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNY2lzFlzBVYaKsoVs2oJe_4OgdBtdLs&callback=initMap">
-            </script>
-
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNY2lzFlzBVYaKsoVs2oJe_4OgdBtdLs&callback=initMap">
+                </script>
+            </div>
             <form>
-                Street
-                <input type="text" name="street">
-                City
-                <input type="text" name="city">
-                Zip code
-                <input type="text" name="zip_code">
-                Country
-                <input type="text" name="country">
-                <input onclick="setLocation()" type="submit" value="Submit">
+                <fieldset>
+                    <legend>Enter another address</legend>
+                    <label for="street">Street:</label>
+                    <input class="form" id="street" placeholder="Route des Chappes"><br>
+
+                    <label for="city">City:</label>
+                    <input class="form" id="city" placeholder="BIOT"><br>
+
+                    <label for="zipCode">Zip Code:</label>
+                    <input class="form" id="zipCode" placeholder="06410"><br>
+
+                    <label for="country">Country:</label>
+                    <input class="form" id="country" placeholder="FRANCE"><br>
+
+                    <input onclick="setLocation()" type="submit" value="Submit">
+                </fieldset>
             </form>
         </article>
+        <section class="article_bottom">
+            23
+            <img class= "share" src="1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
+        <article class="video_article">
+            <video width="320" height="240" id="video1" controls autoplay>
+                <source id="video_src_avi" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.avi" type="video/avi" >
+                <source id="video_src_mp4" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.mp4" type="video/mp4">
+                <source id="video_src_ogv"src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.ogv" type="video/ogv">
+                Your browser does not support the video tag.
+            </video>
+            <canvas width="320" height="80" id="canvas_video"></canvas>
+            <form action="javascript:void(0)" class="form_inline" name="videoForm" onsubmit="formVideoSubmit()">
+                <fieldset>
+                    <legend>Play with your videos !</legend>
+                    <label for="url">URL:</label>
+                    <input class="form" id="url" placeholder="URL of your video"><br>
+
+                    <label for="offset">Offset:</label>
+                    <input type="number" class="form" id="offset" value="0" placeholder="offset is in seconds"><br>
+                </fieldset>
+                <button type="submit" id="submit" class="button">Submit</button>
+                <script src="Video.js"></script>
+
+            </form>
+            <button class="button" id="rotation" onclick="rotateVideo()">rotate</button>
+            <video width="200" height="150" id="video_preview">
+                Your browser does not support the video tag.
+            </video>
+            <button class="button" id="preview" onclick="previewVideo()">preview</button>
+            <input type="checkbox" value="" onclick="changeControls()">Hide default control
+            <button class="button" id="mirror" onclick="mirrorVideo()">Mirror video</button>
+
+
+        </article>
+        <section class="article_bottom">
+            15
+            <img class= "share" src="1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
     </section>
+
+    <aside id="RightBar">
+        <div>
+            <h3>You may be interested in...</h3>
+        </div>
+    </aside>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
 </body>
 </html>
