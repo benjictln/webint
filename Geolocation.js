@@ -78,7 +78,7 @@ function setLocation(){
     });
     var infoWindow = new google.maps.InfoWindow({map: map});
     var geocoder = new google.maps.Geocoder();
-    var address = String(document.getElementsByName("street")[0].value) + ", " + String(document.getElementsByName("city")[0].value) + " " + String(document.getElementsByName("zip_code")[0].value) + ", " + String(document.getElementsByName("country")[0].value);
+    var address = String(document.getElementById("map_street").value) + ", " + String(document.getElementById("map_city").value) + " " + String(document.getElementById("map_zip_code").value) + ", " + String(document.getElementById("map_country").value);
     geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == 'OK') {
             map.setCenter(results[0].geometry.location);
