@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"> -->
+
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no">-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Share</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+</head>
+
+<body>
+    <header id="title">
+        <h1> Share <img id="logo" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png" alt="logo" /></h1>
+    </header>
+
+
+    <section id="LeftBar">
+        <div id="searchbar">
+            <h2>Search</h2>
+            <input class="search" type="text">
+            <input class="button" type="button">
+        </div>
+        <div>
+            <h2>Profile</h2>
+            <h3>Friends</h3>
+
+        </div>
+            <h4>News</h4>
+            <h4>Groups</h4>
+            <h4>Events</h4>
+    </section>
+    <section id="MidBar">
+        <header id="post">
+            <div>
+                Image
+                <input class="image_button" type="button">
+                Video
+                <input class="video button" type="button">
+                Event
+                <input class="event" type="button">
+            </div>
+            <input class="box" type="text">
+        </header>
+        <article>
+            Article test number 1
+        </article>
+        <section class="article_bottom">
+            7
+            <img class= "share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
+        <article>
+            Article test number 2
+        </article>
+        <section class="article_bottom">
+            12
+            <img class= "share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
+        <article>
+            <fieldset>
+                <legend>Please fill in this form !</legend>
+                <label for="firstname">First Name:</label>
+                <!--placeholder: indication grisée
+                //required: il faut renseigner le champs sinon la validation est bloquée
+                //autofocus: le curseur est positionné dans cette case au chargement de la page-->
+                <input class="form" id="firstname" placeholder="Raphaël"><br>
+                <label for="lastname">Last Name:</label>
+                <!-- type="tel": bascule le clavier sur un smartphone
+                // pattern: expression régulière à vérifier pour pouvoir valider-->
+                <input class="form" id="lastname" placeholder="Troncy"><br>
+                <label for="email">Email:</label>
+                <input class="form" id="email" placeholder="prenom.nom@eurecom.fr" required="" pattern="[a-zA-Z]*.[a-zA-Z]*@[a-zA-Z]*.[a-zA-Z]*" type="email"><br>
+                <label for="phonenumber">Phone Number:</label>
+                <!--// type="tel": bascule le clavier sur un smartphone
+                // pattern: expression régulière à vérifier pour pouvoir valider-->
+                <input class="form" id="phonenumber" placeholder="06xxxxxxxx" pattern="06[0-9]{8}" type="tel"><br>
+            </fieldset>
+
+        </article>
+        <section class="article_bottom">
+            9
+            <img class= "share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
+
+        <article id="map_article">
+            <div id="map">
+                <script src="Geolocation.js">
+                </script>
+
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNY2lzFlzBVYaKsoVs2oJe_4OgdBtdLs&callback=initMap">
+                </script>
+            </div>
+            <form action="javascript:void(0)" onclick="setLocation()">
+                <fieldset>
+                    <legend>Enter another address</legend>
+                    <label for="map_street">Street:</label>
+                    <input class="form" id="map_street" placeholder="Route des Chappes"><br>
+
+                    <label for="map_city">City:</label>
+                    <input class="form" id="map_city" placeholder="BIOT"><br>
+
+                    <label for="map_zip_code">Zip Code:</label>
+                    <input class="form" id="map_zip_code" placeholder="06410"><br>
+
+                    <label for="map_country">Country:</label>
+                    <input class="form" id="map_country" placeholder="FRANCE"><br>
+
+                    <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+        </article>
+        <section class="article_bottom">
+            23
+            <img class= "share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
+        <article class="video_article">
+            <video onclick="stopVideo(this)" width="320" height="240" id="video1" controls autoplay>
+                <source id="video_src_avi" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.avi" type="video/avi" >
+                <source id="video_src_mp4" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.mp4" type="video/mp4">
+                <source id="video_src_ogv"src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.ogv" type="video/ogv">
+                Your browser does not support the video tag.
+            </video>
+            <canvas width="320" height="240" id="canvas_video"></canvas>
+            <form action="javascript:void(0)" class="form_inline" name="videoForm" onsubmit="formVideoSubmit()">
+                <fieldset>
+                    <legend>Play with your videos !</legend>
+                    <label for="url">URL:</label>
+                    <input class="form" id="url" placeholder="URL of your video" name="url_video"><br>
+
+                    <label for="offset">Offset:</label>
+                    <input type="number" class="form" id="offset" value="0" placeholder="offset is in seconds"><br>
+                </fieldset>
+                <button type="submit" id="submit" class="button">Submit</button>
+                <script src="Video.js"></script>
+
+            </form>
+            <button class="button" id="rotation" onclick="rotateVideo()">rotate</button>
+            <video width="200" height="150" id="video_preview">
+                Your browser does not support the video tag.
+            </video>
+            <button class="button" id="preview" onclick="previewVideo()">preview</button>
+            <input type="checkbox" value="" onclick="changeControls(1)">Hide default control
+            <button class="button" id="mirror" onclick="mirrorVideo()">Mirror video</button>
+
+
+        </article>
+        <section class="article_bottom">
+            15
+            <img class= "share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
+            <input class="comment" type="text">
+        </section>
+
+        <article>
+            <h1>Video bubble<br><br></h1>
+            <video onclick="stopVideo(this)" id="video_bubble" width="320" height="320" autoplay>
+                <source src="https://archive.org/download/electricsheep-flock-247-5000-1/00247%3D05011%3D05011%3D05011.mp4" type="video/mp4">
+                <source src="https://archive.org/download/electricsheep-flock-247-5000-1/00247%3D05011%3D05011%3D05011.ogv" type="video/ogv">
+                <source src="https://archive.org/download/electricsheep-flock-247-5000-1/00247%3D05011%3D05011%3D05011.avi" type="video/avi" >
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <br>
+            <input type="checkbox" value="" checked onclick="changeControls(2)">Hide default control
+        </article>
+
+        <article>
+            <h1>Video jukebox player<br><br></h1>
+            <video onclick="stopVideo(this)" id="video_jukebox" width="320" height="240" controls>
+                <source src="https://archive.org/download/video_rapid_201703/video_rapid_240x350.mp4" type="video/mp4">
+                <source src="https://archive.org/download/video_rapid_201703/video_rapid_240x350.ogv" type="video/ogv">
+                Your browser does not support the video tag.
+            </video>
+            <script>document.getElementById('video_jukebox').addEventListener('ended',next,false);</script>
+            <br>
+            <h5 id="playing_number">video playing : 1/4</h5>
+            <button id="previous_jukebox" onclick="previous()" disabled>Previous</button>
+
+            <button id="next_jukebox" onclick="next()">Next</button>
+
+        </article>
+    </section>
+
+
+    <aside id="RightBar">
+        <div>
+            <h3>You may be interested in...</h3>
+        </div>
+    </aside>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+</body>
+</html>
