@@ -54,8 +54,23 @@ html, body {
     margin: auto;
     word-wrap: break-word;
 }
-
-
+#trombonne{
+    width: 10%;
+    vertical-align: middle;
+}
+#activity {
+    margin-top: 30%;
+}
+.pics {
+    width: 10%;
+    vertical-align: middle;
+    margin-right: 3%;
+}
+#news {
+    width: 12%;
+    vertical-align: middle;
+    margin-right: 3%;
+}
 
 #RightBar {
     position:absolute;
@@ -71,6 +86,32 @@ html, body {
     color: azure;
 
     text-align: left;
+}
+.ad {
+    width: 80%;
+    vertical-align: middle;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20%;
+}
+#do {
+    width: 82%;
+    height: 20%;
+    vertical-align: middle;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20%;
+}
+
+#more {
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: 18%;
+    text-align: center;
+    font-style: normal;
+    text-decoration: underline;
+
+
 }
 #MidBar {
     width: 70%;
