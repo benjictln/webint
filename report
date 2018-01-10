@@ -4,8 +4,9 @@ Our webpage is describing a social network, named "Share". This social network w
 to comment and archive them, to build groups for an easy sharing, etc...
 The share button near the comment bar, would allow a quick sharing or archiving.
 Some ads adapted to the user's tastes appear in the right side section.
+As expected, the links to other pages are only figurative at the moment and not yet functional.
 
-Some examples of possible posts are given: forms, videos, geolocalisation,...
+Some operational examples of possible posts are given: forms, videos, geolocalisation,...
 To make sure the video is viewable on Firefox, Safari, Iphone, we put it in mp4 and in ogv.
 
 Our website is responsive and adaptative to mobile screens.
