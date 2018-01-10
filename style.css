@@ -236,7 +236,8 @@ canvas {
     /* For mobile phones: */
 
     #LeftBar {
-        width: 100%;
+        padding: 5%;
+        width: 90%;
         position: static;
         min-height: 100%;
         float: none;
@@ -246,8 +247,10 @@ canvas {
     #RightBar {
         position:static;
         height: auto;
-        width: 100%;
+        width: 90%;
         float: none;
+        padding: 5%;
+        border: none;
     }
 
     #MidBar {
@@ -263,6 +266,19 @@ canvas {
 
     .article_bottom {
         width: 80%;
+    }
+
+    #title {
+        width: 90%;
+        padding: 5%;
+    }
+
+    .ad {
+        width: 100%;
+    }
+
+    #do {
+        width: 100%;
     }
 }
 
