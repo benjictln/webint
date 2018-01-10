@@ -1,5 +1,5 @@
 * (What our webpage is describing)
 * Approx time : ?
 
-2) Our website is responsive and adaptative to mobile screens. We used the meta tag viewport and we used the properties maxwidth in CSS.
+2) Our website is responsive and adaptative to mobile screens. We used the meta tag viewport and we used the @media in CSS to have only one column instead of three on mobile and others small screen devices.
 5) To make sure the video is viewable on Firefox, Safari, Iphone, we put the video in mp4 and in ogv.
