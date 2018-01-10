@@ -6,7 +6,7 @@
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
+        center: {lat: 48.8, lng: 2.3},
         zoom: 6
     });
     var infoWindow = new google.maps.InfoWindow({map: map});
@@ -73,7 +73,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function setLocation(){
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
+        center: {lat: 48.8, lng: 2.3},
         zoom: 6
     });
     var infoWindow = new google.maps.InfoWindow({map: map});
@@ -98,7 +98,7 @@ function setLocation(){
 
 }
 
-
+document.getElementById('form_map').addEventListener('submit',setLocation);
 
 
 

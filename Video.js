@@ -5,7 +5,7 @@ var my_video = document.getElementById('video1');
 ctx.transform(1,0,0,-1,0,my_canvas.height);
 var hasVideoChanged = false;
 var hasChangedNumber = 300;
-
+my_canvas.style.display = 'none';
 
 function formVideoSubmit() {
     var my_url = document.forms["videoForm"]["url_video"].value;
@@ -84,7 +84,14 @@ function changeControls(number) {
 function mirrorVideo( new_mirror = true) {
     if (new_mirror) {
         isVideoMirrored = !isVideoMirrored;
-        if (!isVideoMirrored) ctx.clearRect(0,0,my_video.width, my_video.height);
+        if (!isVideoMirrored) {
+            ctx.clearRect(0,0,my_video.width, my_video.height);
+            my_canvas.style.display = 'none';
+        }
+        else {
+            my_canvas.style.display = 'block';
+        }
+
     }
     if (isVideoMirrored) loop();
     var width_ratio;

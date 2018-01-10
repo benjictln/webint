@@ -36,18 +36,18 @@
             <h2>Archived posts <img alt="trombonne" id="trombonne" src="https://images.emojiterra.com/twitter/512px/1f587.png"></h2>
             <img class="ad" alt="archived post" src="http://www.christopherfielden.com/images/11ChrisFielden-LandsEndtoJohnOGroats-MercuryJune2007.jpg">
             <img class="ad" alt="archived post" src="http://amourdelalanguefrancaise.blogspirit.com/media/02/01/2364766698.jpg">
-            <h4 id="more">Show more</h4>
+            <h4 class="more">Show more</h4>
         </div>
     </section>
     <section id="MidBar">
         <header id="post">
             <div>
                 Image
-                <input class="image_button" type="button">
+                <button class="image_button" ></button>
                 Video
-                <input class="video button" type="button">
+                <button class="video button"></button>
                 Event
-                <input class="event" type="button">
+                <button class="event"></button>
             </div>
             <input class="box" type="text">
         </header>
@@ -56,7 +56,7 @@
         </article>
         <section class="article_bottom">
             <img class= "share" alt="share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
-            <input class="comment" id ="comment" type="text" placeholder="Express your mind">
+            <input class="comment" type="text" placeholder="Express your mind">
         </section>
 
         <article>
@@ -64,7 +64,7 @@
         </article>
         <section class="article_bottom">
             <img class= "share" alt="share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
-            <input class="comment" id ="comment" type="text" placeholder="Express your mind">
+            <input class="comment" type="text" placeholder="Express your mind">
         </section>
 
         <article>
@@ -95,15 +95,11 @@
 
 
         <article id="map_article">
-            <div id="map">
-                <script src="Geolocation.js">
-                </script>
 
-                <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNY2lzFlzBVYaKsoVs2oJe_4OgdBtdLs&callback=initMap">
-                </script>
+            <div id="map">
             </div>
-            <form action="javascript:void(0)" onclick="setLocation()">
+
+            <form action="javascript:void(0)" id="form_map">
                 <fieldset>
                     <legend>Enter another address</legend>
                     <label for="map_street">Street:</label>
@@ -124,14 +120,14 @@
         </article>
         <section class="article_bottom">
             <img class= "share" alt="share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
-            <input class="comment" id ="comment" type="text" placeholder="Express your mind">
+            <input class="comment" type="text" placeholder="Express your mind">
         </section>
 
         <article class="video_article">
             <video onclick="stopVideo(this)" width="1280" height="960" id="video1" controls autoplay>
                 <source id="video_src_avi" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.avi" type="video/avi" >
                 <source id="video_src_mp4" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.mp4" type="video/mp4">
-                <source id="video_src_ogv"src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.ogv" type="video/ogv">
+                <source id="video_src_ogv" src="https://archive.org/download/electricsheep-flock-247-7500-6/00247%3D07606%3D07606%3D07606.ogv" type="video/ogv">
                 Your browser does not support the video tag.
             </video>
             <canvas width="1280" height="960" id="canvas_video"></canvas>
@@ -160,7 +156,7 @@
         </article>
         <section class="article_bottom">
             <img class= "share" alt="share" src="https://images.emojiterra.com/emojione/v2/512px/1f91d.png">
-            <input class="comment" id ="comment" type="text" placeholder="Express your mind">
+            <input class="comment" type="text" placeholder="Express your mind">
         </section>
 
         <article>
@@ -197,19 +193,20 @@
     <aside id="RightBar">
         <div>
             <h3>You may be interested in:</h3>
-            <img class="ad" src="https://www.actualite-voitures.fr/wp-content/uploads/2012/08/voiture-AUDI_A3_FF_PUB.jpg">
-            <img class="ad" src="http://www.beautydecoder.com/wp-content/uploads/2016/10/versailles-j-adore.jpg">
-            <img id="do" src="http://www.musique-pub.com/wp-content/uploads/2009/10/mcdonalds-m-bacon.jpg">
-            <img class="ad" src="http://a407.idata.over-blog.com/0/46/47/33/affiche_madagascar_jv.jpg">
-            <img class="ad" src="http://businessoffashion.blog.lemonde.fr/files/2014/07/Lanvin-500x322.jpg">
-            <img class="ad" src="https://lareclame.fr/wp-content/uploads/2009/10/nespresso-article-top-1.jpg">
+            <img class="ad" alt="ad" src="https://www.actualite-voitures.fr/wp-content/uploads/2012/08/voiture-AUDI_A3_FF_PUB.jpg">
+            <img class="ad" alt="ad" src="http://www.beautydecoder.com/wp-content/uploads/2016/10/versailles-j-adore.jpg">
+            <img id="do" alt="ad" src="http://www.musique-pub.com/wp-content/uploads/2009/10/mcdonalds-m-bacon.jpg">
+            <img class="ad" alt="ad" src="http://a407.idata.over-blog.com/0/46/47/33/affiche_madagascar_jv.jpg">
+            <img class="ad" alt="ad" src="http://businessoffashion.blog.lemonde.fr/files/2014/07/Lanvin-500x322.jpg">
+            <img class="ad" alt="ad" src="https://lareclame.fr/wp-content/uploads/2009/10/nespresso-article-top-1.jpg">
 
-            <h4 id="more">Show more</h4>
+            <h4 class="more">Show more</h4>
         </div>
     </aside>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-
+    <script src="Geolocation.js">
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNY2lzFlzBVYaKsoVs2oJe_4OgdBtdLs&callback=initMap">
+    </script>
 </body>
 </html>
