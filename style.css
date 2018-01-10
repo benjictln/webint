@@ -206,11 +206,6 @@ textarea {
     vertical-align: middle;
 }
 
-#video_bubble {
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 #video1 {
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -221,6 +216,11 @@ textarea {
 video {
     max-width: 100%;
     height: auto;
+}
+
+#video_bubble {
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 #video_preview {

@@ -141,7 +141,6 @@
                     <input type="number" class="form" id="offset" value="0" placeholder="offset is in seconds"><br>
                     <button type="submit" id="submit" class="button">Submit</button>
                 </fieldset>
-                <script src="Video.js"></script>
 
             </form>
 
@@ -182,7 +181,6 @@
                 <source src="https://archive.org/download/video_rapid_201703/video_rapid_240x350.ogv" type="video/ogv">
                 Your browser does not support the video tag.
             </video>
-            <script>document.getElementById('video_jukebox').addEventListener('ended',next,false);</script>
             <br>
             <h5 id="playing_number">video playing : 1/4</h5>
             <button id="previous_jukebox" onclick="previous()" disabled>Previous</button>
@@ -211,5 +209,7 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNY2lzFlzBVYaKsoVs2oJe_4OgdBtdLs&callback=initMap">
     </script>
+    <script src="Video.js"></script>
+
 </body>
 </html>

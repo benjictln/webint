@@ -6,6 +6,8 @@ ctx.transform(1,0,0,-1,0,my_canvas.height);
 var hasVideoChanged = false;
 var hasChangedNumber = 300;
 my_canvas.style.display = 'none';
+var video_bubble = document.getElementById('video_bubble');
+document.getElementById('video_jukebox').addEventListener('ended',next,false);
 
 function formVideoSubmit() {
     var my_url = document.forms["videoForm"]["url_video"].value;
