@@ -1,5 +1,14 @@
-* (What our webpage is describing)
-* Approx time : ?
+Report for this assignement:
 
-2) Our website is responsive and adaptative to mobile screens. We used the meta tag viewport and we used the @media in CSS to have only one column instead of three on mobile and others small screen devices.
-5) To make sure the video is viewable on Firefox, Safari, Iphone, we put the video in mp4 and in ogv.
+Our webpage is describing a social network, named "Share". This social network would enable the user to write and see posts in the newsfeed,
+to comment and archive them, to build groups for an easy sharing, etc...
+The share button near the comment bar, would allow a quick sharing or archiving.
+Some ads adapted to the user's tastes appear in the right side section.
+
+Some examples of possible posts are given: forms, videos, geolocalisation,...
+To make sure the video is viewable on Firefox, Safari, Iphone, we put it in mp4 and in ogv.
+
+Our website is responsive and adaptative to mobile screens.
+We used the meta tag viewport and the @media in CSS to have only one column instead of three on mobile and others small screen devices.
+
+We spent approximately 25 hours in total on the realization of this website.
