@@ -43,6 +43,8 @@ function previewVideo() {
         return;
     }
     var my_video_preview = document.getElementById('video_preview');
+    my_video_preview.style.display = 'block';
+    my_video_preview.style.display='inline';
     my_video_preview.src = my_url + '&end=5';
     my_video_preview.autoplay;
     my_video_preview.play();

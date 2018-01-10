@@ -22,18 +22,18 @@
         <div id="searchbar">
             <h2>Search</h2>
             <input class="search" type="text">
-            <button></button>
+            <button>ok</button>
         </div>
 
         <div>
-            <h2> <img alt="" class="pics" src="http://www.aesvt-maroc.com/wp-content/uploads/2016/09/profil.jpg">Profile</h2>
-            <h3> <img alt="" class="pics" src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2764.svg">Friends</h3>
-            <h4> <img alt="" id="news" src="http://www.wiki-brest.net/images/thumb/c/cb/Journal.svg/560px-Journal.svg.png">News</h4>
-            <h4> <img alt="" class="pics" src="https://image.freepik.com/icones-gratuites/cercle-fleche-mince-ligne_318-37389.jpg">Groups</h4>
-            <h4><img alt="" class="pics" src="http://www.monentreedesign.com/boutique/images_produits/26_lettre_maison_inox_e_majuscule-z.jpg">Events</h4>
+            <h2 class="selectable_text"> <img alt="" class="pics" src="http://www.aesvt-maroc.com/wp-content/uploads/2016/09/profil.jpg">Profile</h2>
+            <h3 class="selectable_text"> <img alt="" class="pics" src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/2764.svg">Friends</h3>
+            <h4 class="selectable_text"> <img alt="" id="news" src="http://www.wiki-brest.net/images/thumb/c/cb/Journal.svg/560px-Journal.svg.png">News</h4>
+            <h4 class="selectable_text"> <img alt="" class="pics" src="https://image.freepik.com/icones-gratuites/cercle-fleche-mince-ligne_318-37389.jpg">Groups</h4>
+            <h4 class="selectable_text"><img alt="" class="pics" src="http://www.monentreedesign.com/boutique/images_produits/26_lettre_maison_inox_e_majuscule-z.jpg">Events</h4>
         </div>
         <div id="activity">
-            <h2>Archived posts <img alt="trombonne" id="trombonne" src="https://images.emojiterra.com/twitter/512px/1f587.png"></h2>
+            <h2  class="selectable_text">Archived posts <img alt="trombonne" id="trombonne" src="https://images.emojiterra.com/twitter/512px/1f587.png"></h2>
             <img class="ad" alt="archived post" src="http://www.christopherfielden.com/images/11ChrisFielden-LandsEndtoJohnOGroats-MercuryJune2007.jpg">
             <img class="ad" alt="archived post" src="http://amourdelalanguefrancaise.blogspirit.com/media/02/01/2364766698.jpg">
             <h4 class="more">Show more</h4>
@@ -139,18 +139,21 @@
 
                     <label for="offset">Offset:</label>
                     <input type="number" class="form" id="offset" value="0" placeholder="offset is in seconds"><br>
+                    <button type="submit" id="submit" class="button">Submit</button>
                 </fieldset>
-                <button type="submit" id="submit" class="button">Submit</button>
                 <script src="Video.js"></script>
 
             </form>
-            <button class="button" id="rotation" onclick="rotateVideo()">rotate</button>
+
+            <button id="rotation" onclick="rotateVideo()">rotate</button>
+
+            <button id="preview" onclick="previewVideo()">preview</button>
+            <input type="checkbox" value="" onclick="changeControls(1)">Hide default control
+            <button id="mirror" onclick="mirrorVideo()">Mirror video</button>
+            <br>
             <video width="200" height="150" id="video_preview">
                 Your browser does not support the video tag.
             </video>
-            <button class="button" id="preview" onclick="previewVideo()">preview</button>
-            <input type="checkbox" value="" onclick="changeControls(1)">Hide default control
-            <button class="button" id="mirror" onclick="mirrorVideo()">Mirror video</button>
 
 
         </article>

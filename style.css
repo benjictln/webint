@@ -223,6 +223,11 @@ video {
     height: auto;
 }
 
+#video_preview {
+    display: none;
+    margin-top: 5%;
+}
+
 canvas {
     max-width: 100%;
     height: auto;
@@ -230,6 +235,27 @@ canvas {
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+}
+
+header button {
+    width: 15px;
+    height: 15px;
+}
+
+#RightBar img:hover{
+    cursor: pointer;
+}
+
+.more:hover {
+    cursor: pointer;
+}
+
+#LeftBar img:hover{
+    cursor: pointer;
+}
+
+.selectable_text {
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -253,11 +279,14 @@ canvas {
         border: none;
     }
 
+
+
     #MidBar {
         width: 100%;
         position: static;
         float: none;
         margin-bottom: 10%;
+        padding-top: 5%;
     }
 
     article {
@@ -279,6 +308,10 @@ canvas {
 
     #do {
         width: 100%;
+    }
+
+    #logo {
+        width: 30%;
     }
 }
 
