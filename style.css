@@ -234,14 +234,13 @@ canvas {
 
 @media only screen and (max-width: 1000px) {
     /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
+
     #LeftBar {
         width: 100%;
         position: static;
         min-height: 100%;
         float: none;
+
     }
 
     #RightBar {
@@ -255,9 +254,14 @@ canvas {
         width: 100%;
         position: static;
         float: none;
+        margin-bottom: 10%;
     }
 
     article {
+        width: 80%;
+    }
+
+    .article_bottom {
         width: 80%;
     }
 }
